@@ -20,7 +20,7 @@
                     <td th:text="${anime.nome}"> </td>
                     <td th:text="${anime.lancamento}"> </td>
                     <td th:text="${anime.manga}"> </td>
-
+                    <td sec:authorize="hasRole('ROLE_ADMIN')"> <a th:href="@{animes/delete/{id}(id = ${anime.id})}"> <button type="button" class="btn btn-danger">Excluir</button></a></td>
                 </tr>
             </tbody>
         </table>

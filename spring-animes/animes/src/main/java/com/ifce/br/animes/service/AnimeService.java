@@ -21,4 +21,8 @@ public class AnimeService {
     public List<Animes> listar(){
         return repositoryAnime.findAll();
     }
+
+    public void excluir(Long id){
+        repositoryAnime.deleteById(id);
+    }
 }
