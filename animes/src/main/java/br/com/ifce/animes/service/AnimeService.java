@@ -1,6 +1,7 @@
 package br.com.ifce.animes.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,14 @@ public class AnimeService {
 
     public void excluirService(Long id){
         repositoryAnime.deleteById(id);
+    }
+
+    public Optional<Anime> findId(Long id){
+        return repositoryAnime.findById(id);
+    }
+    
+    public void updateService(Long id){
+        repositoryAnime.findById(id);
     }
     
 }

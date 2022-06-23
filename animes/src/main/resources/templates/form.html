@@ -6,10 +6,13 @@
         <script type="text/javascript"></script>
     </head>
     <body>
-        <form  method="get" action="/anime/save"> 
-            Nome: <input type="text" name="nome">
-            Lançamento: <input type="text" name="lancamento">
-            Produtora: <input type="text" name="produtora">
+        <form  method="post" action="/anime/save" th:object="${anime}" enctype="multipart/form-data">  
+
+            <input type="hidden" th:field="*{id}" />
+            Nome: <input type="text" th:field="*{nome}">
+            Lançamento: <input type="text" th:field="*{lancamento}">
+            Produtora: <input type="text" th:field="*{produtora}">
+            Imagem <input type="file" name="imagem">
             
             <button > Cadastrar </button>
         </form>

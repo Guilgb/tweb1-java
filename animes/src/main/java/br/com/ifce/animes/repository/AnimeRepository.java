@@ -7,6 +7,6 @@ import br.com.ifce.animes.model.Anime;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
-public interface AnimeRepository extends JpaRepository<Anime, Long>(){
+public interface AnimeRepository extends JpaRepository<Anime, Long>{
 
 }
