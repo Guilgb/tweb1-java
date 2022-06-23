@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import br.com.ifce.animes.model.Anime;
 import br.com.ifce.animes.repository.AnimeRepository;
@@ -14,7 +15,9 @@ public class AnimeService {
     @Autowired
     private AnimeRepository repositoryAnime;
 
-    public void saveService(Anime anime){
+    public void saveService(Anime anime, MultipartFile imagem){
+        String caminho = "images/" + anime.getNome() + ".png";
+         
         repositoryAnime.save(anime);
     }
 

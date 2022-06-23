@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.ifce.animes.model.Anime;
@@ -26,8 +28,8 @@ public class AnimeController {
     }
 
     @RequestMapping("anime/save")
-    public ModelAndView save(Anime anime){
-        serviceAnime.saveService(anime);
+    public ModelAndView save(Anime anime, @RequestParam(value = "imagem") MultipartFile imagem ){
+        serviceAnime.saveService(anime, imagem);
         ModelAndView mv = new ModelAndView("redirect:/anime/listar");
         return mv;
     }
