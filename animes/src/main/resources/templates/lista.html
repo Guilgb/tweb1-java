@@ -22,6 +22,7 @@
                     <td th:text="${anime.produtora}"> </td>
                     <td sec:authorize="hasRole('ROLE_ADMIN')"> <a th:href="@{delete/{id}(id = ${anime.id})}"> <button type="button" class="btn btn-danger">Excluir</button></a></td>
                     <td> <a class="btn btn-primary" th:href="@{update/{id}(id = ${anime.id})}"> Atualizar </a> </td>
+                    <td> <img width="20" height="20" src="@{'/images/' + ${anime.nome} + .png}" alt=""> </td>
                 </tr>
             </tbody>
         </table>
